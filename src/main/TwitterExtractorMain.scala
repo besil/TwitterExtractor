@@ -21,12 +21,13 @@ object TwitterExtractorMain {
     val timeline: ResponseList[Status] = twitter.getUserTimeline("ladygaga")
     println( timeline )
     
-    val silvi = twitter.searchUsers("Silvio Bernardinello", 1).asScala
+    val silvi = twitter.searchUsers("Silvio", 10).asScala
     
     println( "Found "+silvi.length+" silvi" )
     
     val silvio = silvi.head
-    println( silvio.getFriendsCount )
+    println( silvio )
+    
     
   }
 }
