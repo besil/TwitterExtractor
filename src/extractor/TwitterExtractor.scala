@@ -10,12 +10,16 @@ class TwitterExtractor {
   val twitter: Twitter = MyTwitterFactory.twitter
   
   def lookFor( fu: User, su: User ): Boolean = {
-    println(fu)
-    println(su)
+    println( fu.getScreenName )
     
-    val followers = twitter.getFriendsIDs(fu.getId).getIDs()
+    val id = fu.getScreenName()
+    val followers = twitter.getFollowersList( id, 10 ).asScala
+    val friends = twitter.getFriendsList( id, 10).asScala
     
-    println( followers.length )
+    // val followers = twitter.getFriendsIDs(fu.getScreenName, 10).getIDs()
+    
+    println( "Followers: " + followers.length )
+    println( "Friends: "+ friends.length )
     
     false
   }
