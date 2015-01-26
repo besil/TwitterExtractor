@@ -13,11 +13,13 @@ class TwitterExtractor {
     println( fu.getScreenName )
     
     val id = fu.getScreenName()
-    val followers = twitter.getFollowersList( id, 10 ).asScala
-    val friends = twitter.getFriendsList( id, 10).asScala
+    val followers = twitter.getFollowersList( id, 10, 5 ).asScala
+    val friends = twitter.getFriendsList( id, 10, 5 ).asScala
     
     // val followers = twitter.getFriendsIDs(fu.getScreenName, 10).getIDs()
     
+    println( "Follower count: "+fu.getFollowersCount)
+    println( "Friends count: "+fu.getFriendsCount )
     println( "Followers: " + followers.length )
     println( "Friends: "+ friends.length )
     
