@@ -4,7 +4,7 @@ import extractor.TwitterExtractor
 
 object TwitterExtractorMain {
   def main(args: Array[String]): Unit = {
-    val names: List[Tuple2[String, String]] = List( ("Apache Spark", "Juice Reply") )
+    val names: List[Tuple2[String, String]] = List( ("Apache Spark", "ladygaga") )
     
     val extractor = new TwitterExtractor()
     
